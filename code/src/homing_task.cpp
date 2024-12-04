@@ -25,7 +25,7 @@ private:
         int cluster_size_threshold = 10;    
         float dist_threshold = 0.2;
         float width_threshold = 0.07;  
-        float curvature_high_threshold = 40.0;
+        float curvature_high_threshold = 30.`0;
         float curvature_low_threshold = 0.05;   
         bool pillar_found = false;
         float min_dist = std::numeric_limits<float>::max();
@@ -67,7 +67,7 @@ private:
             ROS_INFO_STREAM("Pillar's coordinate to Turtlebot is [" << pillar_pos_[0]
                             << ", " << pillar_pos_[1] << "]");
 
-            DriveTurtlebot();
+            // DriveTurtlebot();
         } else {
             ROS_INFO_STREAM("No pillar detected.");
         }
