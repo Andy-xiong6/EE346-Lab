@@ -61,20 +61,20 @@ class Navigate(smach.State):
         goal.target_pose.header.stamp = rospy.Time.now()
 
         if self.point == 'P2':
-            goal.target_pose.pose.position.x = 0.0
-            goal.target_pose.pose.position.y = 0.0
+            goal.target_pose.pose.position.x = 1.0
+            goal.target_pose.pose.position.y = 1.7
             goal.target_pose.pose.orientation.w = 1.0
         elif self.point == 'P3':
-            goal.target_pose.pose.position.x = 0.0
-            goal.target_pose.pose.position.y = 0.0
+            goal.target_pose.pose.position.x = 1.0
+            goal.target_pose.pose.position.y = 0.5
             goal.target_pose.pose.orientation.w = 1.0
         elif self.point == 'P4':
-            goal.target_pose.pose.position.x = 0.0
-            goal.target_pose.pose.position.y = 0.0
+            goal.target_pose.pose.position.x = 1.0
+            goal.target_pose.pose.position.y = -0.4
             goal.target_pose.pose.orientation.w = 1.0
         elif self.point == 'P1':
-            goal.target_pose.pose.position.x = 0.0
-            goal.target_pose.pose.position.y = 0.0
+            goal.target_pose.pose.position.x = 1.0
+            goal.target_pose.pose.position.y = 1.7
             goal.target_pose.pose.orientation.w = 1.0
 
         rospy.loginfo(f"Sending goal to {self.point}")
@@ -145,8 +145,8 @@ class Find_Pillar(smach.State):
 
         if min_index >= 0:
             ang = msg.angle_min + msg.angle_increment * min_index
-            x = min_dist * math.cos(ang)
-            y = min_dist * math.sin(ang)
+            x = (min_dist - 0.20) * math.cos(ang)
+            y = (min_dist - 0.20) * math.sin(ang)
             return [x, y]
         else:
             return None
@@ -172,7 +172,7 @@ class Park_Pillar(smach.State):
 
         goal = MoveBaseGoal()
         goal.target_pose.header.frame_id = "base_link" 
-        goal.target_pose.header.stamp = rospy.Time.now()
+        goal.target_pose.header.stamp = rospy.Time.now() - rospy.Duration(0.03)
 
         # set the xy_goal_tolerance to 0.15 to make the robot park at the 15cm around the pillar
         goal.target_pose.pose.position.x = self.pillar_position[0]
