@@ -61,20 +61,20 @@ class Navigate(smach.State):
         goal.target_pose.header.stamp = rospy.Time.now()
 
         if self.point == 'P2':
-            goal.target_pose.pose.position.x = 1.0
-            goal.target_pose.pose.position.y = 1.7
+            goal.target_pose.pose.position.x = 3.00
+            goal.target_pose.pose.position.y = 1.20
             goal.target_pose.pose.orientation.w = 1.0
         elif self.point == 'P3':
-            goal.target_pose.pose.position.x = 1.0
-            goal.target_pose.pose.position.y = 0.5
+            goal.target_pose.pose.position.x = 0.4
+            goal.target_pose.pose.position.y = 3.4
             goal.target_pose.pose.orientation.w = 1.0
         elif self.point == 'P4':
-            goal.target_pose.pose.position.x = 1.0
-            goal.target_pose.pose.position.y = -0.4
+            goal.target_pose.pose.position.x = 3.4
+            goal.target_pose.pose.position.y = 4.45
             goal.target_pose.pose.orientation.w = 1.0
         elif self.point == 'P1':
-            goal.target_pose.pose.position.x = 1.0
-            goal.target_pose.pose.position.y = 1.7
+            goal.target_pose.pose.position.x = 0.0
+            goal.target_pose.pose.position.y = 0.0
             goal.target_pose.pose.orientation.w = 1.0
 
         rospy.loginfo(f"Sending goal to {self.point}")
