@@ -145,8 +145,8 @@ class Find_Pillar(smach.State):
 
         if min_index >= 0:
             ang = msg.angle_min + msg.angle_increment * min_index
-            x = (min_dist - 0.20) * math.cos(ang)
-            y = (min_dist - 0.20) * math.sin(ang)
+            x = (min_dist - 0.12) * math.cos(ang)
+            y = (min_dist - 0.12) * math.sin(ang)
             return [x, y]
         else:
             return None
