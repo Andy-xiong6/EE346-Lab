@@ -11,5 +11,5 @@
 - [smach_homing_task.py](./code/src/smach_homing_task.py)
 
 ## Lab7
-fine-tuning the smach homing task with the help of the ROS navigation stack.
+fine-tuning the smach homing task with the help of the ROS navigation stack.  
 useful link: [ROSNavigationGuide](https://github.com/zkytony/ROSNavigationGuide)
